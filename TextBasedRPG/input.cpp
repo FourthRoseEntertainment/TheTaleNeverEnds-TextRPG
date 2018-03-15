@@ -53,7 +53,7 @@ std::string Minput::UserInput(std::string passed_output)
 char Minput::ChoiceHandler(std::vector<std::string> output, std::vector<char> input)
 {
 	OutputChoice(output, input);
-	return InputChoice(input);;
+	return InputChoice(input);
 }
 
 void Minput::OutputChoice(std::vector<std::string> output, std::vector<char> input)
