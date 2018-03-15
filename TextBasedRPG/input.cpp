@@ -11,8 +11,8 @@ Minput::~Minput()
 bool Minput::Confirmation()
 {
 	std::vector<char> input;
-	input.push_back('y');
-	input.push_back('n');
+	input.push_back('Y');
+	input.push_back('N');
 	std::vector<std::string> output;
 	output.push_back("Yes");
 	output.push_back("No");
@@ -31,7 +31,7 @@ bool Minput::Confirmation()
 		return false;
 	default:
 		std::cout << "Your entry (" << tempInput << ") does not match the options, please try again!" << std::endl;
-		break;
+		return false;
 	}
 }
 
@@ -50,20 +50,6 @@ std::string Minput::UserInput(std::string passed_output)
 	return tempString;
 }
 
-char Minput::ChoiceHandler(std::vector<std::string> output, std::vector<char> input)
-{
-	OutputChoice(output, input);
-	return InputChoice(input);
-}
-
-void Minput::OutputChoice(std::vector<std::string> output, std::vector<char> input)
-{
-	for (unsigned int i = 0; i < output.size(); i++)
-	{
-		std::cout << "Please input (" << input[i] << ") for " << output[i] << std::endl;
-	}
-}
-
 char Minput::InputChoice(std::vector<char> input)
 {
 	bool restart = true;
@@ -73,17 +59,11 @@ char Minput::InputChoice(std::vector<char> input)
 		tempInput = _getch();
 		for (unsigned int i = 0; i < input.size(); i++)
 		{
-			if (input[i] == tempInput) { return tempInput; }
+			if (input[i] == toupper(tempInput)) { return toupper(tempInput); }
 		}
 		std::cout << "Your entry (" << tempInput << ") does not match the options, please try again!" << std::endl;
 	}
 	return NULL;
-}
-
-char Minput::ChoiceHandler(std::string output, char input)
-{
-	OutputChoice(output, input);
-	return InputChoice(input);
 }
 
 void Minput::OutputChoice(std::string output, char input)
@@ -96,6 +76,27 @@ void Minput::OutputChoice(std::string output, char input)
 	{
 		std::cout << output << " : " << input << std::endl;
 	}
+}
+
+void Minput::OutputChoice(std::vector<std::string> output, std::vector<char> input)
+{
+	for (unsigned int i = 0; i < output.size(); i++)
+	{
+		std::cout << "Please input (" << input[i] << ") for " << output[i] << std::endl;
+	}
+}
+
+/*char Minput::ChoiceHandler(std::vector<std::string> output, std::vector<char> input)
+{
+	OutputChoice(output, input);
+	return InputChoice(input);
+}
+
+
+char Minput::ChoiceHandler(std::string output, char input)
+{
+	OutputChoice(output, input);
+	return InputChoice(input);
 }
 
 char Minput::InputChoice(char input)
@@ -114,4 +115,4 @@ char Minput::InputChoice(char input)
 		}
 	}
 	return NULL;
-}
+}*/

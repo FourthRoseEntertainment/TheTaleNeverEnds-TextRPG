@@ -3,6 +3,7 @@
 #include <vector>
 #include <iostream>
 #include <conio.h>
+
 class Minput
 {
 public:
@@ -12,16 +13,17 @@ public:
 	//User Entry return
 	bool Confirmation();
 	std::string UserInput(std::string passed_output);
-
-	//Multiple options
-	char ChoiceHandler(std::vector<std::string> output, std::vector<char> input);
+	void OutputChoice(std::string output, char input);
 	void OutputChoice(std::vector<std::string> output, std::vector<char> input);
 	char InputChoice(std::vector<char> input);
+	/*
+	//Multiple options
+	char ChoiceHandler(std::vector<std::string> output, std::vector<char> input);
 
 	//Single options
 	char ChoiceHandler(std::string output, char input);
-	void OutputChoice(std::string output, char input);
 	char InputChoice(char input);
+	*/
 
 private:
 

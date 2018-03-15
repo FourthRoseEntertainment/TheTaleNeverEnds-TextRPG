@@ -1,6 +1,7 @@
 #pragma once
 #include "player.h"
 #include "input.h"
+#include "PlayerChoiceHandler.h"
 
 class Mloop
 {
@@ -14,4 +15,5 @@ private:
 	int loopExit = 0;
 	Mplayer player;
 	Minput input;
+	PlayerChoiceHandler pch;
 };

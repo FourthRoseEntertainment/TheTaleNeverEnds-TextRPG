@@ -1,7 +1,9 @@
 #include <map>
 #include <string>
+#include <iterator>
 #include <vector>
 #include <iostream>
+#include <conio.h>
 
 using namespace std;
 

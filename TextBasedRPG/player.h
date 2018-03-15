@@ -14,9 +14,9 @@ public:
 	void PopulateClass();
 
 	void SetPlayerName(std::string passed_name);
-	void SetBackground(char passed_bg);
-	void SetRole(char passed_r);
-	void SetClass(char passed_c);
+	void SetBackground(std::string passed_bg);
+	void SetRole(std::string passed_r);
+	void SetClass(std::string passed_c);
 
 	void Harm(int negHP);
 	void Heal(int posHP);
@@ -25,13 +25,8 @@ public:
 
 	//Option Values
 	std::vector <std::string> bgTypes;
-	std::vector <char> bgOptions;
-
 	std::vector <std::string> rTypes;
-	std::vector <char> rOptions;
-
 	std::vector <std::string> cTypes;
-	std::vector <char> cOptions;
 
 private:
 	//Plot Values
