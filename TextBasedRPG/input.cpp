@@ -10,29 +10,11 @@ Minput::~Minput()
 
 bool Minput::Confirmation()
 {
-	std::vector<char> input;
-	input.push_back('Y');
-	input.push_back('N');
-	std::vector<std::string> output;
-	output.push_back("Yes");
-	output.push_back("No");
-
+	std::vector<std::string> yesno = { "Yes", "No" };
 	OutputChoice(" - Is this correct?", NULL);
-	OutputChoice(output, input);
-	char tempInput = InputChoice(input);
-	switch (tempInput)
-	{
-	case 'Y':
-	case 'y':
-		return true;
-		break;
-	case 'N':
-	case 'n':
-		return false;
-	default:
-		std::cout << "Your entry (" << tempInput << ") does not match the options, please try again!" << std::endl;
-		return false;
-	}
+	string choice = PlayerChoiceHandler::getPlayerChoice(yesno);
+	if (choice == "Yes") return true;
+	if (choice == "No") return false;
 }
 
 std::string Minput::UserInput(std::string passed_output)

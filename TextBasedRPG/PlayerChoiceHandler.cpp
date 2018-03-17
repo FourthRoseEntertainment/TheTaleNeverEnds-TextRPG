@@ -62,6 +62,15 @@ string PlayerChoiceHandler::getPlayerChoice(vector<string> choiceList)
 // Display keyboard keys and choices in user-friendly way
 void PlayerChoiceHandler::displayChoices(map<char, string> choiceMap)
 {
+	// In the special case of yes/no, we don't want to print in alphabetical order
+	if (choiceMap.size() == 2) {
+		if (choiceMap.find('Y') != choiceMap.end() && choiceMap['Y'] == "Yes" &&
+			choiceMap.find('N') != choiceMap.end() && choiceMap['N'] == "No") {
+			cout << "Y : Yes" << endl;
+			cout << "N : No" << endl;
+			return;
+		}
+	}
 	cout << "Choices:" << endl;
 	for (pair<char, string> p : choiceMap)
 		cout << p.first << " : " << p.second << endl;

@@ -15,5 +15,4 @@ private:
 	int loopExit = 0;
 	Mplayer player;
 	Minput input;
-	PlayerChoiceHandler pch;
 };
