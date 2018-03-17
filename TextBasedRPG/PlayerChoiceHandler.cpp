@@ -5,49 +5,57 @@ string PlayerChoiceHandler::getPlayerChoice(vector<string> choiceList)
 {
 	if (choiceList.size() < 1) throw invalid_argument("Not enough choices");
 	if (choiceList.size() > 26) throw invalid_argument("More choices than keyboard keys");
-	// Decide character -> string mapping
 	map<char, string> choiceMap;
-	vector<string> remainder;
-	// First pass: Go through the choices, and use their first letter if we can
-	for (vector<string>::iterator it = choiceList.begin(); it != choiceList.end(); ++it) {
-		// Try the first character
-		char firstChar = (*it)[0];
+	// set of choices which have already been assigned
+	set<string> assigned;
+
+	// 1) Decide character -> string mapping
+
+	// First pass: Go through the choices, and use their first letter, if we can
+	for (string choice : choiceList) {
+		// try the first character
+		char firstChar = toupper(choice.front());
+		// check if first character is already mapped
 		if (choiceMap.find(firstChar) == choiceMap.end()) {
-			choiceMap[firstChar] = *it;
-			continue;
-		}
-		else {
-			remainder.push_back(*it);
+			choiceMap[firstChar] = choice;
+			assigned.insert(choice);
 		}
 	}
-	// Second pass: Go through the choices we failed to assign, and just pick the first available alphabet character
-	int y = 0;
-	for (vector<string>::iterator it = remainder.begin(); it != remainder.end(); ++it,y++) {
-		string temp = *it;
-		for (int i = 0; i < remainder[y].size(); i++)
-		{
-			char tempC = toupper(temp[i]);
-			if (choiceMap.find(tempC) == choiceMap.end())
+
+	// Second pass: Go through the choices, and use an available letter from their word, if we can
+	for (string choice : choiceList) {
+		// check if already assigned
+		if (assigned.find(choice) != assigned.end()) continue;
+		// try each letter of the word
+		for (char letter : choice) {
+			char upLetter = toupper(letter);
+			if (choiceMap.find(upLetter) == choiceMap.end())
 			{
-				choiceMap[tempC] = *it;
+				choiceMap[upLetter] = choice;
+				assigned.insert(choice);
 				break;
 			}
-			if (i == (remainder[y].size() - 1))
-			{
-				string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-				for (string::iterator it2 = alphabet.begin(); it2 != alphabet.end(); ++it2) {
-					if (choiceMap.find(toupper(*it2)) == choiceMap.end()) {
-						choiceMap[toupper(*it2)] = *it;
-						break;
-					}
-				}
+		}
+	}
+
+	// Final pass: Use an arbitrary letter from the alphabet
+	string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	for (string choice : choiceList) {
+		// check if already assigned
+		if (assigned.find(choice) != assigned.end()) continue;
+		// try each character of alphabet
+		for (char letter : alphabet) {
+			if (choiceMap.find(letter) == choiceMap.end()) {
+				choiceMap[letter] = choice;
+				break;
 			}
 		}
 	}
-	// Display choices to user
+
+	// 2) Display choices to user
 	displayChoices(choiceMap);
 
-	// Request input from user, and return
+	// 3) Request input from user, and return
 	return choiceMap[getPlayerInput(choiceMap)];
 }
 
@@ -55,21 +63,17 @@ string PlayerChoiceHandler::getPlayerChoice(vector<string> choiceList)
 void PlayerChoiceHandler::displayChoices(map<char, string> choiceMap)
 {
 	cout << "Choices:" << endl;
-	for (map<char, string>::iterator it = choiceMap.begin(); it != choiceMap.end(); ++it)
-		cout << it->first << " : " << it->second << endl;
+	for (pair<char, string> p : choiceMap)
+		cout << p.first << " : " << p.second << endl;
 }
 
 // Get valid key press from user
 char PlayerChoiceHandler::getPlayerInput(map<char, string> choiceMap)
 {
-	while (char tempInput = _getch())
+	while (char tempInput = toupper(_getch()))
 	{
-		if (choiceMap.find(toupper(tempInput)) != choiceMap.end())
-		{
-			map<char, string>::iterator it = choiceMap.begin();
-			it = choiceMap.find(toupper(tempInput));
-			return it->first;
-		}
-		cout << "Your entry (" << toupper(tempInput) << ") does not match the options, please try again!" << endl;
+		if (choiceMap.find(tempInput) != choiceMap.end())
+			return choiceMap.find(tempInput)->first;
+		cout << "Your entry (" << tempInput << ") does not match the options, please try again!" << endl;
 	}
 }
