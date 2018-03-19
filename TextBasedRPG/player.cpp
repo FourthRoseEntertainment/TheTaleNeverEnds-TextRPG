@@ -1,14 +1,14 @@
 #include "player.h"
 
-
-
 Mplayer::Mplayer()
 {
+
 }
 
 
 Mplayer::~Mplayer()
 {
+
 }
 
 void Mplayer::Startup()
@@ -26,20 +26,25 @@ void Mplayer::Startup()
 	chaStat = 0;
 	intStat = 0;
 	wisStat = 0;
+
+	dice.Startup();
 }
 
 void Mplayer::SetPlayerName(std::string passed_name)
 {
 	playerName = passed_name;
 }
+
 void Mplayer::SetBackground(std::string passed_bg)
 {
 	bgType = passed_bg;
 }
+
 void Mplayer::SetRole(std::string passed_r)
 {
 	rType = passed_r;
 }
+
 void Mplayer::SetClass(std::string passed_c)
 {
 	cType = passed_c;

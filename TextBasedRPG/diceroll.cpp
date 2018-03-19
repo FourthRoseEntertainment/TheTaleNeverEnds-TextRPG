@@ -13,10 +13,13 @@ Mdiceroll::~Mdiceroll()
 
 void Mdiceroll::Startup()
 {
+	value = 0;
+	lastValue = value;
+	offset = 7;
+	srand((int)time(0));
 }
 std::vector<int> Mdiceroll::DiceRoller(int dType, int dQty)
 {
-	srand((int)time(0));
 	dice.clear();
 	for (int i = 0; i < dQty; i++)
 	{
@@ -27,7 +30,14 @@ std::vector<int> Mdiceroll::DiceRoller(int dType, int dQty)
 
 int Mdiceroll::Roll(int dType)
 {
-	int value = (rand() % dType) + 1;
+	do {
+		
+		value = rand();
+		value = value / offset;
+	} while (value == lastValue);
+	lastValue = value;
+	value = value % dType + 1;
+
 	return value;
 }
 
