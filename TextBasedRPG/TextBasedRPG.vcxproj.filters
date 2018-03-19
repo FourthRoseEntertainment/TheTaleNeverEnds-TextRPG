@@ -18,13 +18,16 @@
     <ClInclude Include="game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="loop.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="diceroll.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Loop.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PlayerChoiceHandler.h">
@@ -35,16 +38,19 @@
     <ClCompile Include="game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="loop.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="diceroll.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="PlayerChoiceHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Loop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

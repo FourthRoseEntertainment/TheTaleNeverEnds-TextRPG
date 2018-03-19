@@ -115,16 +115,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="diceroll.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="input.h" />
-    <ClInclude Include="loop.h" />
+    <ClInclude Include="Loop.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="PlayerChoiceHandler.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="diceroll.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="input.cpp" />
-    <ClCompile Include="loop.cpp" />
+    <ClCompile Include="Loop.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="PlayerChoiceHandler.cpp" />
   </ItemGroup>
