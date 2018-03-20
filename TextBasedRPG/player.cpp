@@ -2,7 +2,7 @@
 
 Mplayer::Mplayer()
 {
-
+	Startup();
 }
 
 
@@ -13,12 +13,7 @@ Mplayer::~Mplayer()
 
 void Mplayer::Startup()
 {
-	PopulateBackground();
-	PopulateRole();
-	PopulateClass();
-
-	aTypes.push_back("Roll");
-	aTypes.push_back("Preset");
+	
 
 	strStat = 0;
 	dexStat = 0;
@@ -27,7 +22,10 @@ void Mplayer::Startup()
 	intStat = 0;
 	wisStat = 0;
 
-	dice.Startup();
+
+	bgTypes = story.LoadOptions(bgTypes, true, false, false);
+	rTypes = story.LoadOptions(rTypes, false, true, false);
+	cTypes = story.LoadOptions(cTypes, false, false, true);
 }
 
 void Mplayer::SetPlayerName(std::string passed_name)

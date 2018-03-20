@@ -1,0 +1,32 @@
+{
+  "Warrior":
+  {
+    "stat":[1,0,1,0,0,0],
+    "armor":["Heavy","Medium","Light","Plate"],
+    "weapon":["Sword", "Mace", "Axe", "Shield"]
+  },
+  "Fighter":
+  {
+    "stat":[2,0,0,0,0,0],
+    "armor":["Medium","Light","Vital"],
+    "weapon":["Sword", "Mace", "Axe", "Two-Handed"]
+  },
+  "Cleric":
+  {
+    "stat":[0,0,1,0,0,1],
+    "armor":["Light","Vestment"],
+    "weapon":["Sword", "Mace", "Scepter", "Shield"]
+  },
+  "Mage":
+  {
+    "stat":[0,0,0,0,2,0],
+    "armor":["Light","Robe"],
+    "weapon":["Sword", "Staff", "Focus"]
+  },
+  "Thief":
+  {
+    "stat":[0,2,0,0,0,0],
+    "armor":["Medium","Light","Cloaked"],
+    "weapon":["Sword", "Dagger", "Bow", "Gauntlet"]
+  }
+}

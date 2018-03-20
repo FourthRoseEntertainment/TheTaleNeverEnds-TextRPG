@@ -6,6 +6,7 @@
 #include <iostream>
 #include <algorithm>
 #include "PlayerChoiceHandler.h"
+#include "storyhandler.h"
 
 class Mplayer
 {
@@ -30,16 +31,16 @@ public:
 	void Heal(int posHP);
 	void LevelUp();
 	void SetStatus(int statType, int statPotency);
-
 	//Option Values
-	std::vector <std::string> bgTypes;
-	std::vector <std::string> rTypes;
-	std::vector <std::string> cTypes;
-	std::vector <std::string> aTypes;
+	std::vector <std::string> bgTypes = story.LoadOptions(cTypes, true, false, false);
+	std::vector <std::string> rTypes = story.LoadOptions(cTypes, false, true, false);
+	std::vector <std::string> cTypes = story.LoadOptions(cTypes, false, false, true);
+	std::vector <std::string> aTypes = { "Roll","Preset" };
 	std::vector<int> statAllocation = { 0,0,0,0,0,0 };
 
 private:
 	Mdiceroll dice;
+	Mstoryhandler story;
 
 	//Plot Values
 	std::string playerName;

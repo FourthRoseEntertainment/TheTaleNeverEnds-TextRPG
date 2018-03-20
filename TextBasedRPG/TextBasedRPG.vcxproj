@@ -118,9 +118,11 @@
     <ClInclude Include="diceroll.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="input.h" />
+    <ClInclude Include="json.hpp" />
     <ClInclude Include="Loop.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="PlayerChoiceHandler.h" />
+    <ClInclude Include="storyhandler.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="diceroll.cpp" />
@@ -129,6 +131,7 @@
     <ClCompile Include="Loop.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="PlayerChoiceHandler.cpp" />
+    <ClCompile Include="storyhandler.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

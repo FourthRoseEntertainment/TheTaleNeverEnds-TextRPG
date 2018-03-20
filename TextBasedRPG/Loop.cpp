@@ -3,6 +3,8 @@
 
 Mloop::Mloop()
 {
+	Startup();
+	GameLoop();
 }
 
 
@@ -12,7 +14,6 @@ Mloop::~Mloop()
 
 void Mloop::Startup()
 {
-	player.Startup();
 	player.SetPlayerName(input.UserInput("Please enter your character's name :"));
 	input.OutputChoice("What is your background?", NULL);
 	player.SetBackground(PlayerChoiceHandler::getPlayerChoice(player.bgTypes)); //Only one currently.

@@ -1,0 +1,14 @@
+{
+  "background":
+  {
+    "List":["Adventurer", "Crafter", "Laborer"]
+  },
+  "role":
+  {
+    "List":["Amateur", "Skilled", "Veteran"]
+  },
+  "class":
+  {
+    "List":["Warrior", "Fighter", "Cleric", "Mage", "Thief"]
+  }
+}

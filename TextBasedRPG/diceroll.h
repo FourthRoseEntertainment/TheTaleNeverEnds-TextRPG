@@ -16,7 +16,5 @@ public:
 private:
 	std::vector<int> dice;
 	int value;
-	int lastValue;
-	int offset;
 };
 

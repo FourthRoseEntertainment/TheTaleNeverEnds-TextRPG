@@ -1,0 +1,192 @@
+{
+  "Heavy":
+  {
+    "List":["Heavy Armor", "Heavy Armor +1"],
+    "Heavy Armor":{
+      "stats":[0,0,0,0,0,0]
+    },
+    "Heavy Armor +1":{
+      "stats":[0,0,1,0,0,0]
+    }
+  },
+  "Medium":
+  {
+    "List":["Medium Armor", "Medium Armor +1"],
+    "Medium Armor":{
+      "stats":[0,0,0,0,0,0]
+    },
+    "Medium Armor +1":{
+      "stats":[0,0,1,0,0,0]
+    }
+  },
+  "Light":
+  {
+    "List":["Light Armor", "Light Armor +1"],
+    "Light Armor":{
+      "stats":[0,0,0,0,0,0]
+    },
+    "Light Armor +1":{
+      "stats":[0,0,1,0,0,0]
+    }
+  },
+  "Plate":
+  {
+    "List":["Plate Armor", "Plate Armor +1"],
+    "Plate Armor":{
+      "stats":[0,0,0,0,0,0]
+    },
+    "Plate Armor +1":{
+      "stats":[0,0,1,0,0,0]
+    }
+  },
+  "Vital":
+  {
+    "List":["Vital Armor", "Vital Armor +1"],
+    "Vital Armor":{
+      "stats":[0,0,0,0,0,0]
+    },
+    "Vital Armor +1":{
+      "stats":[0,0,1,0,0,0]
+    }
+  },
+  "Vestment":
+  {
+    "List":["Vestments", "Vestments +1"],
+    "Vestments":{
+      "stats":[0,0,0,0,0,0]
+    },
+    "Vestments +1":{
+      "stats":[0,0,1,0,0,0]
+    }
+  },
+  "Robe":
+  {
+    "List":["Robes", "Robes +1"],
+    "Robes":{
+      "stats":[0,0,0,0,0,0]
+    },
+    "Robes +1":{
+      "stats":[0,0,1,0,0,0]
+    }
+  },
+  "Cloaked":
+  {
+    "List":["Cloaked Garbs", "Cloaked Garbs +1"],
+    "Cloaked Garbs":{
+      "stats":[0,0,0,0,0,0]
+    },
+    "Cloaked Garbs +1":{
+      "stats":[0,0,1,0,0,0]
+    }
+  },
+  "Sword":
+  {
+    "List":["Sword", "Sword +1"],
+    "Sword":{
+      "stats":[0,0,0,0,0,0]
+    },
+    "Sword +1":{
+      "stats":[1,0,0,0,0,0]
+    }
+  },
+  "Mace":
+  {
+    "List":["Mace", "Mace +1"],
+    "Mace":{
+      "stats":[0,0,0,0,0,0]
+    },
+    "Mace +1":{
+      "stats":[1,0,0,0,0,0]
+    }
+  },
+  "Axe":
+  {
+    "List":["Axe", "Axe +1"],
+    "Axe":{
+      "stats":[0,0,0,0,0,0]
+    },
+    "Axe +1":{
+      "stats":[1,0,0,0,0,0]
+    }
+  },
+  "Shield":
+  {
+    "List":["Shield", "Shield +1"],
+    "Shield":{
+      "stats":[0,0,0,0,0,0]
+    },
+    "Shield +1":{
+      "stats":[0,0,1,0,0,0]
+    }
+  },
+  "Two-Handed":
+  {
+    "List":["Greatsword", "Greatsword +1"],
+    "Greatsword":{
+      "stats":[0,0,0,0,0,0]
+    },
+    "Greatsword +1":{
+      "stats":[1,0,0,0,0,0]
+    }
+  },
+  "Scepter":
+  {
+    "List":["Scepter", "Scepter +1"],
+    "Scepter":{
+      "stats":[0,0,0,0,0,0]
+    },
+    "Scepter +1":{
+      "stats":[0,0,0,0,0,1]
+    }
+  },
+  "Staff":
+  {
+    "List":["Staff", "Staff +1"],
+    "Staff":{
+      "stats":[0,0,0,0,0,0]
+    },
+    "Staff +1":{
+      "stats":[0,0,0,0,1,0]
+    }
+  },
+  "Focus":
+  {
+    "List":["Focus", "Focus +1"],
+    "Focus":{
+      "stats":[0,0,0,0,0,0]
+    },
+    "Focus +1":{
+      "stats":[0,0,0,0,1,0]
+    }
+  },
+  "Dagger":
+  {
+    "List":["Dagger", "Dagger +1"],
+    "Dagger":{
+      "stats":[0,0,0,0,0,0]
+    },
+    "Dagger +1":{
+      "stats":[0,1,0,0,0,0]
+    }
+  },
+  "Bow":
+  {
+    "List":["Bow", "Bow +1"],
+    "Bow":{
+      "stats":[0,0,0,0,0,0]
+    },
+    "Bow +1":{
+      "stats":[0,1,0,0,0,0]
+    }
+  },
+  "Gauntlet":
+  {
+    "List":["Gauntlet", "Gauntlet +1"],
+    "Gauntlet":{
+      "stats":[0,0,0,0,0,0]
+    },
+    "Gauntlet +1":{
+      "stats":[0,1,0,0,0,0]
+    }
+  }
+}
