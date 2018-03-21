@@ -11,30 +11,43 @@ Mstoryhandler::~Mstoryhandler()
 
 void Mstoryhandler::Startup()
 {
-	std::ifstream optionLdr;
-	optionLdr.open("optionLdr.JSON");
-	if (!optionLdr.is_open()) { std::cout << "Options Failed to Load!" << std::endl; }
-	optionLdr >> js;
-	optionLdr.close();
 }
 
-std::vector<std::string> Mstoryhandler::LoadOptions(std::vector<std::string> option, bool bg, bool r , bool c)
+std::vector<std::string> Mstoryhandler::LoadOptions(std::string selection)
 {
-	if (bg)
+	std::ifstream optionLdr("optionLdr.json");
+	json js = json::parse(optionLdr);
+	std::vector<std::string> option;
+	json data = js[selection]["List"];
+	for (int i = 0; i != data.size(); i++)
 	{
-		//option = js.get < std::string "Background"::std::string "List";
+		option.push_back(data[i]);
 	}
-	else
-	{if(r){
-		//option = js.get < std::string "Background"::std::string "List";
+	return option;
+}
+
+std::vector<int> Mstoryhandler::LoadClass(std::string cType)
+{
+	std::ifstream classLdr("classLdr.json");
+	json js = json::parse(classLdr);
+	std::vector<int> option;
+	json data = js[cType]["stat"];
+	for (int i = 0; i != data.size(); i++)
+	{
+		option.push_back(data[i]);
 	}
-	else {
-		if (c) {
-			//option = js.get < std::string "Background"::std::string "List";
-		}
-		else
-		{
-			return option;
-		}
-	} }
+	return option;
+}
+
+std::vector < std::string > Mstoryhandler::LoadClassEquips(std::string cType, std::string type)
+{
+	std::ifstream classLdr("classLdr.json");
+	json js = json::parse(classLdr);
+	std::vector<std::string> option;
+	json data = js[cType][type];
+	for (int i = 0; i != data.size(); i++)
+	{
+		option.push_back(data[i]);
+	}
+	return option;
 }

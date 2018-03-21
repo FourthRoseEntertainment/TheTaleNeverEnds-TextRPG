@@ -11,7 +11,9 @@ public:
 	Mstoryhandler();
 	~Mstoryhandler();
 	void Startup();
-	std::vector<std::string> LoadOptions(std::vector<std::string> option, bool bg, bool r, bool c);
+	std::vector<std::string> LoadOptions(std::string selection);
+	std::vector<int> LoadClass(std::string cType);
+	std::vector<std::string> LoadClassEquips(std::string cType, std::string type);
 
 private:
 	std::ifstream classLdr;

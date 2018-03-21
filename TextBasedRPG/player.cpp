@@ -13,19 +13,15 @@ Mplayer::~Mplayer()
 
 void Mplayer::Startup()
 {
-	
-
 	strStat = 0;
 	dexStat = 0;
 	conStat = 0;
 	chaStat = 0;
 	intStat = 0;
 	wisStat = 0;
-
-
-	bgTypes = story.LoadOptions(bgTypes, true, false, false);
-	rTypes = story.LoadOptions(rTypes, false, true, false);
-	cTypes = story.LoadOptions(cTypes, false, false, true);
+	bgTypes = story.LoadOptions("background");
+	rTypes = story.LoadOptions("role");
+	cTypes = story.LoadOptions("class");
 }
 
 void Mplayer::SetPlayerName(std::string passed_name)
@@ -46,6 +42,10 @@ void Mplayer::SetRole(std::string passed_r)
 void Mplayer::SetClass(std::string passed_c)
 {
 	cType = passed_c;
+	statAllocation = story.LoadClass(cType);
+	Allocate(statAllocation);
+	armorTypes = story.LoadClassEquips(cType,"armor");
+	weaponTypes = story.LoadClassEquips(cType, "weapon");
 }
 
 void Mplayer::SetAllocation(std::string passed_a)
@@ -91,18 +91,6 @@ void Mplayer::Allocate(std::vector<int> passed_statAllocation)
 	std::cout << "Wisdom:\t\t" << wisStat << std::endl;
 }
 
-void Mplayer::PopulateBackground()
-{
-	bgTypes.push_back("Adventurer");
-}
-void Mplayer::PopulateRole()
-{
-	rTypes.push_back("Amateur");
-}
-void Mplayer::PopulateClass()
-{
-	cTypes.push_back("Fighter");
-}
 
 void Mplayer::Harm(int negHP)
 {
@@ -148,7 +136,7 @@ std::vector<int> Mplayer::SortAllocation(std::vector<int> passed_statAllocation)
 					if (strV > 0) { std::cout << "Strength has already been selected." << std::endl; valid = false; }
 					else
 					{
-						swap(*it, temp_statAllocation[0]);
+						temp_statAllocation[0] = *it;
 						strV++;
 					}
 				}
@@ -157,7 +145,7 @@ std::vector<int> Mplayer::SortAllocation(std::vector<int> passed_statAllocation)
 					if (dexV > 0) { std::cout << "Dexterity has already been selected." << std::endl; valid = false;}
 					else
 					{
-						swap(*it, temp_statAllocation[1]);
+						temp_statAllocation[1] = *it;
 						dexV++;
 					}
 				}
@@ -166,7 +154,7 @@ std::vector<int> Mplayer::SortAllocation(std::vector<int> passed_statAllocation)
 					if (conV > 0) { std::cout << "Constitution has already been selected." << std::endl; valid = false;}
 					else
 					{
-						swap(*it, temp_statAllocation[2]);
+						temp_statAllocation[2] = *it;
 						conV++;
 					}
 				}
@@ -175,7 +163,7 @@ std::vector<int> Mplayer::SortAllocation(std::vector<int> passed_statAllocation)
 					if (chaV > 0) { std::cout << "Charisma has already been selected." << std::endl;  valid = false; }
 					else
 					{
-						swap(*it, temp_statAllocation[3]);
+						temp_statAllocation[3] = *it;
 						chaV++;
 					}
 				}
@@ -184,7 +172,7 @@ std::vector<int> Mplayer::SortAllocation(std::vector<int> passed_statAllocation)
 					if (intV > 0) { std::cout << "Intellect has already been selected." << std::endl;  valid = false; }
 					else
 					{
-						swap(*it, temp_statAllocation[4]);
+						temp_statAllocation[4] = *it;
 						intV++;
 					}
 				}
@@ -193,7 +181,7 @@ std::vector<int> Mplayer::SortAllocation(std::vector<int> passed_statAllocation)
 					if (wisV > 0) { std::cout << "Wisdom has already been selected." << std::endl; valid = false; }
 					else
 					{
-						swap(*it, temp_statAllocation[5]);
+						temp_statAllocation[5] = *it;
 						wisV++;
 					}
 				}
