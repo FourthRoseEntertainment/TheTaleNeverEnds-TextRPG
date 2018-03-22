@@ -52,11 +52,11 @@ void Minput::OutputChoice(std::string output, char input)
 {
 	if (input == NULL)
 	{
-		std::cout << output << std::endl;
+		std::cout << output << std::endl << std::endl;
 	}
 	else
 	{
-		std::cout << output << " : " << input << std::endl;
+		std::cout << output << " : " << input << std::endl << std::endl;
 	}
 }
 

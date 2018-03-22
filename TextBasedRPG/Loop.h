@@ -12,7 +12,7 @@ public:
 	void GameLoop();
 
 private:
-	int loopExit = 0;
+	bool loopExit;
 	Mplayer player;
 	Minput input;
 };

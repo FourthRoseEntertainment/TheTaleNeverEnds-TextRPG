@@ -51,3 +51,24 @@ std::vector < std::string > Mstoryhandler::LoadClassEquips(std::string cType, st
 	}
 	return option;
 }
+
+void Mstoryhandler::storyDisplay(std::string fType, std::string tag) 
+{
+	std::ifstream textFile;
+	std::string line;
+	std::string previousLine;
+
+	textFile.open(fType+".txt");
+	if (!textFile.is_open()) { std::cout << "OPEN FAILED!"; }
+	while (getline(textFile, line))
+	{
+		if (previousLine == tag)
+		{
+			std::cout << "\t" << line << std::endl;
+			break;
+		}
+		previousLine = line;
+	}
+	textFile.close();
+	
+}

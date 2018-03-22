@@ -23,15 +23,13 @@ void Mloop::Startup()
 	player.SetClass(PlayerChoiceHandler::getPlayerChoice(player.cTypes));
 	input.OutputChoice("How would you like to determine your statistics?", NULL);
 	player.SetAllocation(PlayerChoiceHandler::getPlayerChoice(player.aTypes));
-
-	cin.get();
-	loopExit = 1;
-
+	loopExit = false;
 }
 void Mloop::GameLoop()
 {
-	while (loopExit == 0)
+	while (!loopExit)
 	{
-
+		player.RunStoryline();
+		loopExit = player.End();
 	}
 }

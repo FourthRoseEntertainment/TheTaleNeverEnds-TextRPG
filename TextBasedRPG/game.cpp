@@ -5,6 +5,7 @@
 int main()
 {
 	Mloop loop;
+	loop.GameLoop();
 	return 0;
 }
 

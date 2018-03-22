@@ -1,0 +1,9 @@
+WARRIOR STORY
+STORY_BEGIN
+The warrior held his sword up, brandishing it in the mirror.  This looks good!  Yes, he'd made the right call, better to be a warrior than a puny mage, no matter how powerful magic could be; what good was it without a warrior's steel to win the day?!
+STORY_ONE
+He prepared for the day to come by getting his equipment on.  A long sword. Medium armor.  Nothing amazing, but it would do, until he made it big!
+STORY_TWO
+He stepped out of his home, and to the adventurer's guild: It was there he would receive his first mission.  Alone, and new, he was given the menial task of gathering herbs in the nearby forest.
+STORY_THREE
+He would never have expected where it would lead: The struggle begins!

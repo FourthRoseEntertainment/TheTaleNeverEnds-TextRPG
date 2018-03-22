@@ -19,6 +19,8 @@ void Mplayer::Startup()
 	chaStat = 0;
 	intStat = 0;
 	wisStat = 0;
+	armorRating = 10;
+	sbIt = 0;
 	bgTypes = story.LoadOptions("background");
 	rTypes = story.LoadOptions("role");
 	cTypes = story.LoadOptions("class");
@@ -88,7 +90,7 @@ void Mplayer::Allocate(std::vector<int> passed_statAllocation)
 	std::cout << "Constitution:\t" << conStat << std::endl;
 	std::cout << "Charisma:\t" << chaStat << std::endl;
 	std::cout << "Intellect:\t" << intStat << std::endl;
-	std::cout << "Wisdom:\t\t" << wisStat << std::endl;
+	std::cout << "Wisdom:\t\t" << wisStat << std::endl << std::endl;
 }
 
 
@@ -107,6 +109,26 @@ void Mplayer::LevelUp()
 void Mplayer::SetStatus(int statType, int statPotency)
 {
 
+}
+void Mplayer::RunStoryline()
+{
+	if (sbIt != storyboard.size())
+	{
+		story.storyDisplay(cType, storyboard[sbIt]);
+		sbIt++;
+	}
+	std::cin.get();
+}
+
+bool Mplayer::End()
+{
+	if (sbIt == storyboard.size())
+	{
+		return true;
+	}
+	else { return false; }
+	std::cout << "GAME OVER!";
+	std::cin.get();
 }
 
 std::vector<int> Mplayer::SortAllocation(std::vector<int> passed_statAllocation)

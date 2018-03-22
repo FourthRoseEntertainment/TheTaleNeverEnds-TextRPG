@@ -72,8 +72,10 @@ void PlayerChoiceHandler::displayChoices(map<char, string> choiceMap)
 		}
 	}
 	cout << "Choices:" << endl;
-	for (pair<char, string> p : choiceMap)
+	for (pair<char, string> p : choiceMap) {
 		cout << p.first << " : " << p.second << endl;
+	}
+	cout << endl;
 }
 
 // Get valid key press from user

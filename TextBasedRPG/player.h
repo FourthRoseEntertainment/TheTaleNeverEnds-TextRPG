@@ -22,6 +22,8 @@ public:
 	void SetClass(std::string passed_c);
 	void SetAllocation(std::string passed_a);
 	void Allocate(std::vector<int> passed_statAllocation);
+	void RunStoryline();
+	bool End();
 	std::vector<int> SortAllocation(std::vector<int> passed_aTypes);
 
 	void Harm(int negHP);
@@ -45,12 +47,19 @@ private:
 	std::string rType;
 	std::string cType;
 	std::string aType;
+	std::vector<std::string> storyboard = { "STORY_BEGIN", "STORY_ONE", "STORY_TWO", "STORY_THREE" };
+	int sbIt; //Holds iteration of storyboard to accept specific scenes in order.
+	std::vector<std::string> roleboard = { "ROLE_BEGIN", "ROLE_ONE", "ROLE_TWO", "ROLE_THREE" };
+	int rIt; //Holds iteration of storyboard to accept specific scenes in order.
+	std::vector<std::string> bgboard = { "BG_BEGIN", "BG_ONE", "BG_TWO", "BG_THREE" };
+	int bgIt; //Holds iteration of storyboard to accept specific scenes in order.
 
 	//Longevity Values
 	int healthPoints;
 	int spellSlots;
 
 	//Statistic Values
+	int armorRating;
 	int strStat;
 	int dexStat;
 	int conStat;
